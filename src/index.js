@@ -36,6 +36,10 @@ const DEFAULT_MAX_REQUESTS = 20
  */
 class Batcher {
   constructor(config) {
+    if (typeof config === 'undefined') {
+      config = {}
+    }
+
     if (typeof config === 'function') {
       config = {dispatch: config}
     }
@@ -45,14 +49,14 @@ class Batcher {
      *
      * @type {int}
      */
-    this.timeout = config?.timeout || DEFAULT_TIMEOUT
+    this.timeout = config.timeout || DEFAULT_TIMEOUT
 
     /**
      * The maxRequests configuration.
      *
      * @type {int}
      */
-    this.maxRequests = config?.maxRequests || DEFAULT_MAX_REQUESTS
+    this.maxRequests = config.maxRequests || DEFAULT_MAX_REQUESTS
 
     if (config.dispatch) {
       this.dispatch = config.dispatch
