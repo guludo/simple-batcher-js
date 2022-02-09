@@ -2,7 +2,6 @@
   "name": "simple-batcher",
   "version": "0.0.0",
   "description": "A simple Javascript library for batching asynchronous operations of the same type.",
-  "main": "index.js",
   "repository": "https://github.com/guludo/simple-batcher-js",
   "author": "Gustavo Sousa",
   "license": "MIT",
