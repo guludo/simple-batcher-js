@@ -115,7 +115,7 @@ class Batcher {
   /**
    * The dispatch function.
    *
-   * This function must either be replaced with the dispatch function passed
+   * This function is either be replaced with the dispatch function passed
    * to the constructor or overridden by a subclass.
    */
   async dispatch(payload) {
