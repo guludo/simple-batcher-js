@@ -13,7 +13,7 @@ const DEFAULT_TIMEOUT = 10
 /**
  * Default value for `config.maxRequests` in `Batcher(config)`.
  */
-const DEFAULT_MAX_REQUESTS = 20
+const DEFAULT_MAX_REQUESTS = 100
 
 
 /**
