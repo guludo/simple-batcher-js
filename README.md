@@ -99,11 +99,11 @@ passed, the following keys are supported:
   the accumulated requests. Note that the user can also subclass `Batcher` and
   provide the `dispatch` method directly as well.
 
-- `config.timeout`: Timeout in milliseconds for the dispatch.
+- `config.timeout`: Timeout in milliseconds for the dispatch. (Default: 10)
 
 - `config.maxRequests`: Maximum number of requests to be accumulated. If that
   number is reached at a call to `this.request`, the dispatch is performed
-  immediately.
+  immediately. (Default: 100)
 
 
 ### `async Batcher.request(arg)`
