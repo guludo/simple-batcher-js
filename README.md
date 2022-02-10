@@ -1,5 +1,15 @@
-simple-batcher-js
-=================
+simple-batcher
+==============
+
+```
+npm install simple-batcher
+```
+
+or
+
+```
+yarn add simple-batcher
+```
 
 This is a simple Javascript library for batching asynchronous operations of
 the same type.
