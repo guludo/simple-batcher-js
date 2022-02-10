@@ -70,51 +70,34 @@ instantiating the batcher object. See the API documentation for that.
 API
 ---
 
-This module only has one export, which is the `Batcher` class. You can import it with:
+This module provides just a default export, which is the `Batcher` class. You
+can import it with:
 
 ```js
 import Batcher from 'simple-batcher'
 ```
 
-The API is described as below:
+The API is described below:
 
-```js
-/**
- * The batcher class.
- *
- * @param {function|object} config - The configuration object for this
- *    batcher. Note that if only the dispatch function is intended to be
- *    passed, it can be passed directly without wrapping in an object.
- *
- * @param {function} config.dispatch - The function responsible for performing
- *    the dispatch of the accumulated requests. Note that the user can also
- *    subclass `Batcher` and provide the `dispatch` method directly
- *    as well.
- *
- * @param {int} config.timeout - Timeout in milliseconds for the dispatch.
- *
- * @param {int} config.maxRequests - Maximum number of requests to be
- *    accumulated. If that number is reached at a call to `this.request`, the
- *    dispatch is performed immediately.
- */
-class Batcher {
-  /**
-   * Request an operation using `arg` as input data.
-   *
-   * @param {*} arg - Request data to be pushed to the internal payload array.
-   *
-   * @returns {*} - This method resolves to the result for this request.
-   *
-   * @async
-   */
-  async request(arg)
+### `Batcher([config | dispatch])`
 
-  /**
-   * The dispatch function.
-   *
-   * This function is either be replaced with the dispatch function passed
-   * to the constructor or overridden by a subclass.
-   */
-  async dispatch(payload)
-}
-```
+The constructor for the batcher object. It may receive as argument either the
+dispatch function or a configuration object. When a configuration object is
+passed, the following keys are supported:
+
+- `config.dispatch`: The function responsible for performing the dispatch of
+  the accumulated requests. Note that the user can also subclass `Batcher` and
+  provide the `dispatch` method directly as well.
+
+- `config.timeout`: Timeout in milliseconds for the dispatch.
+
+- `config.maxRequests`: Maximum number of requests to be accumulated. If that
+  number is reached at a call to `this.request`, the dispatch is performed
+  immediately.
+
+
+### `async Batcher.request(arg)`
+
+Request an operation using `arg` as input data. This is an asynchronous method
+that resolves to the result respective to `arg` after the batch operation is
+performed.
