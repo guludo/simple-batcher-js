@@ -7,8 +7,13 @@ Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to
 
 
 ## Unreleased
+- Nothing yet.
+
+
+## 1.1.0 - 2022-02-10
 ### Changed
 - Increased default value for `config.maxRequests` to `100`.
+
 
 ## 1.0.0 - 2022-02-09
 ### Added
